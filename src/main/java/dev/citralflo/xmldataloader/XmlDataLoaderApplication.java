@@ -21,6 +21,13 @@ public class XmlDataLoaderApplication {
 
         xmlService.createPerson(new Person("Michal", "Wojtas", "726802258", "wojtas.michal90@gmail.com", "90010112345", ContractType.INTERNAL));
 
+        /*
+        if (xmlService.deletePersonByPesel("97102655959")) {
+            System.out.println("Person deleted");
+        } else {
+            System.out.println("Person not found");
+        }
+         */
     }
 
 }

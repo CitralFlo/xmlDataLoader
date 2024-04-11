@@ -159,4 +159,57 @@ public class XmlService {
 
     }
 
+    boolean deletePersonByPesel(String pesel) {
+
+
+        String filePath = "";
+
+
+        for (String path : externalDataPath) {
+            try {
+                DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+                DocumentBuilder db = dbf.newDocumentBuilder();
+                Document data = db.parse(new File(path));
+                data.normalizeDocument();
+
+                Node personNode = data.getElementsByTagName("person").item(0);
+
+                NodeList personData = personNode.getChildNodes();
+
+                for (int i = 0; i < personData.getLength(); i++) {
+                    Node detail = personData.item(i);
+                    if (detail.getNodeType() == Node.ELEMENT_NODE) {
+                        Element element = (Element) detail;
+                        if (element.getTagName().equals("pesel")
+                            && element.getAttribute("value").equals(pesel)) {
+                            filePath = path;
+                            break;
+                        }
+                    }
+                }
+            } catch (SAXException e) {
+                throw new RuntimeException(e);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            } catch (ParserConfigurationException e) {
+                throw new RuntimeException(e);
+            }
+        }
+        // Create a File object representing the XML file
+        File file = new File(filePath);
+
+        // Check if the file exists
+        if (file.exists()) {
+            // Attempt to delete the file
+            if (file.delete()) {
+                return true;
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
+
+    }
+
 }

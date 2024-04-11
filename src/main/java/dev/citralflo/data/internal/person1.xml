@@ -1,0 +1,7 @@
+<person>
+    <name value="John" />
+    <surname value="Wick" />
+    <phone value="123696969" />
+    <email value="theboogeyman@gmail.com" />
+    <pesel value="12345678901" />
+</person>

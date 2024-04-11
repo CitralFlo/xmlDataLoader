@@ -1,0 +1,7 @@
+<person>
+    <name value="John"/>
+    <surname value="Doe"/>
+    <phone value="123456789"/>
+    <email value="john.doe@gmail.com"/>
+    <pesel value="97102655959"/>
+</person>

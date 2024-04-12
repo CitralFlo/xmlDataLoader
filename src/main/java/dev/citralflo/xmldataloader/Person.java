@@ -72,6 +72,6 @@ public class Person {
 
     @Override
     public String toString() {
-        return "Person{" + "firstName=" + firstName + ", lastName=" + lastName + ", email=" + email + ", phoneNumber=" + phoneNumber + ", pesel=" + pesel + ", type=" + type + '}';
+        return "Person {\n" + "firstName=" + firstName + "\n- lastName=" + lastName + "\n- email=" + email + "\n- phoneNumber=" + phoneNumber + "\n- pesel=" + pesel + "\n- type=" + type + '}';
     }
 }

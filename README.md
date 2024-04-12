@@ -1,0 +1,3 @@
+# XmlDataManager
+
+In presented case....
